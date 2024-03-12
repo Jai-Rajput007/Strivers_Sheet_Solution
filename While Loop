@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+int n;
+cin>>n;
+int evensum=0,oddsum=0,digit;
+while(n!=0){
+    digit=n%10;
+    if(n%2==0){
+        evensum+=digit;
+    }else{
+        oddsum+=digit;
+    }
+    n=n/10;
+}
+cout<<evensum<<" "<<oddsum;
+return 0;	
+}
