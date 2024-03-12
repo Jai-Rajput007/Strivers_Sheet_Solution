@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+        int n,prevterm=1,nextterm=1,next;
+         cin>>n;
+         if(n==1||n==2){
+                 cout<< 1;
+         }else{ 
+                 for(int i=3;i<=n;i++){
+                 next=prevterm+nextterm;
+                  prevterm =nextterm;
+                  nextterm = next;     
+                   
+         }
+          cout<< next ; 
+         return 0;
+         }       
+}
