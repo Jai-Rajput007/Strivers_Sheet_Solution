@@ -92,7 +92,136 @@ cout<<endl;
  
 	}
 8#
+*****
+ ***
+  *
+void nStarTriangle(int n) {
+   for(int i=0;i<n;i++){
+      for(int j=0;j<i;j++){
+          cout<<" ";
+          }
+          for(int j=0;j<2*n-(2*i+1);j++){
+             cout<<"*";
+          }
+          for(int j=0;j<i;j++){
+          cout<<" ";
+          }
+          cout<<endl;
+}
+}
+9#
+ *
+ ***
+*****
+*****
+ ***
+  *
+void nStarDiamond(int n) {
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<2*i+1;j++){
+            cout<<"*";
+        }
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    for(int i=0;i<n;i++){
+      for(int j=0;j<i;j++){
+          cout<<" ";
+          }
+          for(int j=0;j<2*n-(2*i+1);j++){
+             cout<<"*";
+          }
+          for(int j=0;j<i;j++){
+          cout<<" ";
+          }
+          cout<<endl;
+}
+}
+10#
+*
+**
+***
+**
+*
+void nStarTriangle(int n) {
+  for(int i=1;i<=n;i++){
+      for(int j=1;j<=i;j++){
+          cout<<"*";
+      }
+      cout<<endl;
+  }
+   for(int i=1;i<=n;i++){
+      for(int j=1;j<n-i+1;j++){
+          cout<<"*";
+      }
+      cout<<endl;
+  }
+}
+11#
+1
+0 1
+1 0 1
+void nBinaryTriangle(int n) {
+    int start =1;
+   
+   for(int i=0;i<n;i++){
+        if(i%2==0){
+        start=1;
+    }else{
+        start=0;
+    }
+       for(int j=0;j<=i;j++){
+           cout<<start;
+           start=1-start;
+       }
+       cout<<endl;
 
+   }
 
-
+}
+12#
+1         1
+1 2     2 1
+1 2 3 3 2 1
+void numberCrown(int n) {
+    int space = 2 * (n - 1);
+    for (int i = 1; i <= n; i++) {
+        // numbers
+        for (int j = 1; j <= i; j++) {
+            cout << j;
+        }
+        // spaces
+        for (int j = 1; j <= space; j++) {
+            cout << " ";
+        }
+        // numbers
+        for (int j = i; j >= 1; j--) {
+            cout << j;
+        }
+        cout << endl;
+        space -= 2;
+    }
+}
+13#
+1
+2 3
+4 5 6 
+7 8 9 10
+void nNumberTriangle(int n) {
+    int count=1;
+   for(int i=1;i<=n;i++){
+       for(int j=1;j<=i;j++){
+           cout<<count<<" ";
+           count=count+1;  
+   }
+   cout<<endl; 
+       }
+        
+   }
+14#
 
