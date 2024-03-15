@@ -110,7 +110,7 @@ void nStarTriangle(int n) {
 }
 }
 9#
- *
+  *
  ***
 *****
 *****
@@ -224,4 +224,43 @@ void nNumberTriangle(int n) {
         
    }
 14#
+A
+A B
+A B C 
+A B C D
+void nLetterTriangle(int n) {
+   for(int i=0;i<n;i++){
+       for(char ch='A';ch<='A'+i;ch++){
+           cout<<ch<<" ";
+       }
+       cout<<endl;
+   }
+}
+15#
+A B C D
+A B C
+A B
+A
+void nLetterTriangle(int n) {
+   for(int i=1;i<=n;i++){
+     for(char ch='A';ch<='A'+(n-i);ch++){
+     cout<<ch<<" ";  
+   }
+   cout<<endl;
+}
+}
+16#
+A
+B B
+C C C
+D D D D
+void alphaRamp(int n) {
+  for(int i=0;i<n;i++){
+      char ch='A'+i;
+      for(int j=0;j<=i;j++){
+          cout<<ch<<" ";
+      }
+      cout<<endl;
+  }
+}
 
