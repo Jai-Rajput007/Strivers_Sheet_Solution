@@ -263,4 +263,208 @@ void alphaRamp(int n) {
       cout<<endl;
   }
 }
+17#
+    A
+  A B A
+A B C B A
+void alphaHill(int n) {
+   for(int i=0;i<n;i++){
+     for(int j=0;j<n-i-1;j++){
+     cout<<" ";
+       
+   }
+    char ch = 'A';
+          int breakpoint = (2*i+1)/2;
+          for(int j=1;j<=2*i+1;j++){
+              
+              cout<<ch<<" ";
+              if(j <= breakpoint) ch++;
+              else ch--;
+   }
+   for(int j=0;j<n-i-1;j++){
+     cout<<" ";
+       
+   }
+   cout<<endl;
+}
+}
+18#
+F
+E F
+D E F
+C D E F
+B C D E F
+A B C D E F
+void pattern18(int N)
+{
+      // Outer loop for the no. of rows.
+      for(int i=0;i<N;i++){
+          
+          // Inner loop for printing the alphabets from
+          // A + N -1 -i (i is row no.) to A + N -1 ( E in this case).
+          for(char ch =('A'+N-1)-i;ch<=('A'+N-1);ch++){
+              
+              cout<<ch<<" ";
+          }
+          
+          // As soon as the letters for each iteration are printed, we move to the
+          // next row and give a line break otherwise all letters
+          // would get printed in 1 line.
+          cout<<endl;
+      }
+}
+19#
+**************
+******  ******
+*****    *****
+****      ****
+***        ***
+**          **
+*            *
+*            *
+**          **
+***        ***
+****      ****
+*****    *****
+******  ******
+**************
+void nStarDiamond(int n) {
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i;j++){
+            cout<<"*";
+        }
+        for(int j=0;j<2*i;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<n-i;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    for(int i=0;i<n;i++){
+      for(int j=0;j<=i;j++){
+          cout<<"*";
+          }
+          for(int j=0;j<2*(n-i-1);j++){
+             cout<<" ";
+          }
+          for(int j=0;j<=i;j++){
+          cout<<"*";
+          }
+          cout<<endl;
+}
+}
+20#
+*            *
+**          **
+***        ***
+****      ****
+*****    *****
+******  ******
+**************
+******  ******
+*****    *****
+****      ****
+***        ***
+**          **
+*            *
+void Butterfly(int n)
+{
+      // initialising the spaces.
+      int spaces = 2*n-2;
+      
+      // Outer loop for printing row.
+      for(int i = 1;i<=2*n-1;i++){
+          
+          // stars for first half
+          int stars = i;
+          
+          // stars for the second half.
+          if(i>n) stars = 2*n - i;
+          
+          //for printing the stars
+          for(int j=1;j<=stars;j++){
+              cout<<"*";
+          }
+          
+          //for printing the spaces
+          for(int j = 1;j<=spaces;j++){
+              cout<<" ";
+          }
+          
+          //for printing the stars
+          for(int j = 1;j<=stars;j++){
+              cout<<"*";
+          }
+          
+          // As soon as the stars for each iteration are printed, we move to the
+          // next row and give a line break otherwise all stars
+          // would get printed in 1 line.
+          cout<<endl;
+          if(i<n) spaces -=2;
+          else spaces +=2;
+      }
+      
+}
+21#
+*******
+*     *
+*     *
+*     *
+*     *
+*     *
+*******
+void Hollowsquare(int n){
+{
+     
+     for(int i=0;i<n;i++){
+         for(int j=0;j<n;j++){
+             
+             if(i==0 || j==0 || i==n-1 || j==n-1)
+                cout<<"*";
+             else cout<<" ";
+         }
+          cout<<endl;
+     }
+      
+}
+}
+22#
+3 3 3 3 3 
+3 2 2 2 3 
+3 2 1 2 3 
+3 2 2 2 3 
+3 3 3 3 3
+The distance of the current cell from the top can be written as the row number i.e, i.
+The distance of the current cell from the left can be written as the column number i.e, j.
+The distance of the current cell from the right can be written as (2*n-2) – j.
+The distance of the current cell from the bottom can be written as (2*n-2) – i.
+
+void pattern22(int n)
+{
+     // Outer loop for no. of rows
+     for(int i=0;i<2*n-1;i++){
+         
+         // inner loop for no. of columns.
+         for(int j=0;j<2*n-1;j++){
+             
+             // Initialising the top, down, left and right indices of a cell.
+             int top = i;
+             int bottom = j;
+             int right = (2*n - 2) - j;
+             int left = (2*n - 2) - i;
+             
+             // Min of 4 directions and then we subtract from n
+             // because previously we would get a pattern whose border
+             // has 0's, but we want with border N's and then decreasing inside.
+             cout<<(n- min(min(top,bottom), min(left,right)))<<" ";
+         }
+         
+         // As soon as the numbers for each iteration are printed, we move to the
+         // next row and give a line break otherwise all numbers
+         // would get printed in 1 line.
+         cout<<endl;
+     }
+      
+}
 
