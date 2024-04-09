@@ -1,21 +1,35 @@
-brute -
-#include<bits/stdc++.h>
+#include<vector>
+
 int getLongestZeroSumSubarrayLength(vector<int> &arr){
-int left =0,right =0;
-long long sum =arr[0];
-	int maxlen =0;
-	 int  k =0;
-	int n = arr.size();
-	while(right<n){
-		while(left<=right && sum>k){
-			sum -= arr[left];
-			left++;
-		}
-		if(sum==k){
-			maxlen = max(maxlen,right-left+1);
-		}
-			right++;
-			if(right<n)sum+= arr[right];
-		}
-		return maxlen;
-	}
+
+unordered_map<int,int> mpp;
+// Maxi will store thr maximum length
+int maxi=0;
+//Sum will store the prefix sum
+int sum=0; 
+//We linarly iterate in array and keep on sum
+for(int i=0;i<arr.size();i++){
+    sum+=arr[i];
+    //first thing we check if prefix sum =0
+    if(sum == 0){
+        // if it is from the first element till the current element index 
+        //that subarray will giving me the index 0
+        //that will be longest  subarray tiil now
+        //Now we simplly update the max with 1
+        maxi = i+1;
+    }
+    //if sum is not 0 we come at this else 
+    else {
+//we check that prefix sum previously existed in the hash map or not
+        if(mpp.find(sum) != mpp.end()){
+            //if we get it, we get the index and then subtract it from index
+            //Then we compare with max  and update it if it exceeds 
+            maxi =max(maxi,i-mpp[sum]);
+        }else{
+            //if prefix sum previously existed simply gonna put it into the hashmap
+            mpp[sum]=i;
+        }
+    }
+}
+	return maxi;
+}
