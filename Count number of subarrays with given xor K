@@ -15,15 +15,15 @@ return count ;
 Optimal -
 int subarraysWithSumK(vector < int > A, int B) {
    int count = 0;
-    unordered_map<int, int> prefix_xor_count;
-    int current_xor = 0;
+    unordered_map<int, int> mpp;
+    int xr = 0;
 
-    prefix_xor_count[0] = 1;
+    mpp[0] = 1;
 
     for (int num : A) {
-        current_xor ^= num;
-        count += prefix_xor_count[current_xor ^ B];
-        prefix_xor_count[current_xor]++;
+        xr ^= num;
+        count += mpp[xr ^ B];
+        mpp[xr]++;
     }
 
     return count;
