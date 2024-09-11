@@ -1,0 +1,56 @@
+# Printing  1 to n integers-
+
+void jai(int n){
+   if(n==0) 
+   return;
+   jai(n-1);
+   cout<<n<<" ";
+}
+    int main(){
+        int n;
+        cin>>n;
+        jai(n);
+        return 0;
+
+    }
+# Print a input name n no. of times -
+void printname(string str,int n){
+    if(n==0) return;
+    cout<<str<<endl;
+    printname(str,n-1);
+}
+
+    int main(){
+       int n;
+       string str;
+       cin>>n;
+       getline(cin,str);
+       printname(str,n);
+      return 0;
+    }
+# Reverse an array-
+
+#include <iostream>
+using namespace std;
+//Function to print array
+void printArray(int arr[], int n) {
+   cout << "The reversed array is:- " << endl;
+   for (int i = 0; i < n; i++) {
+      cout << arr[i] << " ";
+   }
+}
+//Function to reverse array using recursion
+void reverseArray(int arr[], int start, int end) {
+   if (start < end) {
+      swap(arr[start], arr[end]);
+      reverseArray(arr, start + 1, end - 1);
+   }
+}
+int main() {
+   int n = 5;
+   int arr[] = { 5, 4, 3, 2, 1 };
+   reverseArray(arr, 0, n - 1);
+   printArray(arr, n);
+   return 0;
+}
+

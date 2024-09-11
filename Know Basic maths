@@ -1,0 +1,66 @@
+# Extraction of numbers -
+while(n>0){
+int digit = n % 10;
+cout<<digit;
+n=n/10;
+}
+#Count Digits-
+int count (int n){
+int cnt=(int)(log10(n)+1);
+return cnt;
+}
+# You are given a number ’n’,Find the number of digits of ‘n’ that evenly divide ‘n’-
+int countDigits(int n){
+int originalN = n; 
+    int count = 0;
+    while (n != 0) {
+        // Get the last digit
+        int digit = n % 10;
+        // Avoid division by zero and check if the digit evenly divides the original number
+        if (digit != 0 && originalN % digit == 0) {
+            count++;
+        }
+        // Remove the last digit
+        n = n / 10;
+    }
+    return count;
+}
+# Check Palindrome -
+bool palindrome(int n)
+{  
+    int temp = n;
+   int revN=0;
+   while (n>0){
+       int digit =n%10;
+       revN =(revN * 10)+digit;
+       n=n/10;
+   }
+   if (temp==revN){
+        return true;
+   }else{
+       return false;
+   }
+}
+# Check armstrong -
+#include <bits/stdc++.h>
+using namespace std;
+bool checkArmstrong(int n){
+	int dup =n;
+	int count=0;
+	int sum =0;
+	int temp =n;
+	 while (temp != 0)
+    {
+        count++;
+        temp = temp / 10;
+    }
+	 while (n != 0)
+    {
+        int digit = n % 10;
+        sum += pow(digit,count);
+        n /= 10;
+    }
+    return (sum == dup);
+}
+
+
