@@ -1,0 +1,30 @@
+Brute better -
+int subarraysWithSumK(vector < int > a, int b) {
+  int count =0;
+for(int i=0;i<a.size();i++){
+      int xorr=0;
+      for (int j=i;j<a.size();j++){
+          xorr = xorr ^ a[j];
+          if (xorr == b){
+              count++;
+                  } 
+      }
+}
+return count ;
+}
+Optimal -
+int subarraysWithSumK(vector < int > A, int B) {
+   int count = 0;
+    unordered_map<int, int> mpp;
+    int xr = 0;
+
+    mpp[0] = 1;
+
+    for (int num : A) {
+        xr ^= num;
+        count += mpp[xr ^ B];
+        mpp[xr]++;
+    }
+
+    return count;
+}
